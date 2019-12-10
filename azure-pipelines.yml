@@ -33,13 +33,13 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
+- task: DotNetCoreCLI@1
   inputs:
     command: test
     projects: '**/*Test.csproj'
     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
-- task: DotNetCoreCLI@1
+- task: DotNetCoreCLI@2
   inputs:
     command: publish
     publishWebProjects: True
